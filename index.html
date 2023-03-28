@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /*폰트 적용을 위한 코드*/
+       @font-face {
+        font-family: "LeeSeoyun";
+        src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff")
+            format("woff");
+        font-weight: normal;
+        font-style: normal;
+       }
+
+       /* body태그 자체에 css 요소 부여 */
+    body {
+	font-family: "LeeSeoyun";
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	background-image: url("./background.png");
+    }
+    /*전체 몸통 부분*/
+    .container{
+        width: 400px;
+        background-color: #ff9d73;
+        height: 80%;
+    }
+    /*사진이 들어가는 부분 -> 상단에서 30픽셀 띄운다*/
+    .photos{
+        margin-top: 30px;
+    }
+    /*사진이 들어가는 공간--세로 15픽셀 가로 20픽셀을 띄우고 사진의 높이를 200으로*/
+    .photo-frame{
+        background-color: white;
+        margin: 15px 20px;   
+        height: 400px;
+        
+        background-size: cover;
+        position: relative;
+    }
+    /*하단부를 꾸미는 클래스 column이 아래방향으로 문자가 가도록 해준다 align-items: center는 요소들을 중간으로 모아준다*/
+    .footer{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .f-title{
+        color: white;
+        font-size: 25px;
+        font-weight: 900;
+    }
+    .f-date{
+        color: white;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    
+    .photo_description{
+        /*글자는 흰색, 배경은 검은색*/
+        color: white;
+        background-color: black;
+        /*가로너비는 내부 콘텐츠에 맞게*/
+        width: fit-content;
+        padding: 0 20px;
+        margin-bottom: 10px;
+        /*경계선*/
+        border-radius: 10px;
+
+        position: absolute;
+        bottom: 0;
+        transform: translate(-50%);
+        left:50%;
+    }
+
+    #image1{
+        background-image: url('./경영.png');
+    }
+    #image2{
+        background-image: url('./태현.jpg');
+    }
+    #image3{
+        background-image: url('./한주.jpg');
+    }
+    /*
+    #image4{
+        background-image: url('./한주\,태현.jpg');
+    }
+    */
+    .video{
+        width: 100%;
+        height: 100%;
+    }
+
+    /*opacity = 불투명함 0은 보인다 1은 하나도 안보인다*/
+    .showText{
+        opacity:1;
+    }
+
+    .hideText{
+        opacity:0;
+        transition: opacity 0.5s linear;
+        /**/
+    }
+    </style>
+    <script>
+        
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div calss= "photos">
+            <div id = "image1" class="photo-frame">
+                <span id ="desc1" class="photo_description">
+                    경영씨
+                </span>
+            </div>
+            <div id = "image2" class="photo-frame">
+                <span id ="desc2" class="photo_description">
+                    태현씨
+                </span>
+            </div>
+            <div id = "image3" class="photo-frame">
+                <span id ="desc3" class="photo_description">
+                    전데용
+                </span>
+            </div>
+            <div class="photo-frame">
+                <iframe
+                    src = "https://www.youtube.com/embed/M6gaAmqHRAs"
+                    frameborder = "0"
+                    class = "video"
+                ></iframe>
+            </div>
+        <div class="footer">
+            <p class ="f-title">Happy Lunch Time</p>
+            <p class ="f-date">2023.03.28</p>
+        </div>
+    </div>
+</body>
+</html>
